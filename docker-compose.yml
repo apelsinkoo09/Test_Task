@@ -1,0 +1,27 @@
+
+services:
+  app:
+    build: .
+    ports:
+      - "8081:8081"   
+    environment:
+      - DB_USER= test
+      - DB_PASSWORD= test
+      - DB_NAME=test_task
+      - DB_HOST=db  
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test_task
+    ports:
+      - "5433:5432"  
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  
+
+volumes:
+  postgres_data:

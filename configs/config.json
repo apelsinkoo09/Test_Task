@@ -1,0 +1,8 @@
+{
+    "user": "test",
+    "password": "test",
+    "dbname": "test_task",
+    "sslmode": "disable",
+    "host": "db",
+    "port": 5432
+}
